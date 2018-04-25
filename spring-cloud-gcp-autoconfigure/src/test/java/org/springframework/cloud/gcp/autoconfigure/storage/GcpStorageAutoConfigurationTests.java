@@ -59,6 +59,11 @@ import static org.mockito.Mockito.when;
 		})
 public class GcpStorageAutoConfigurationTests {
 
+	// Sets project ID so logging appender doesn't complain.
+	static {
+		System.setProperty("GOOGLE_CLOUD_PROJECT", "test-project");
+	}
+
 	@LocalServerPort
 	private int port;
 
